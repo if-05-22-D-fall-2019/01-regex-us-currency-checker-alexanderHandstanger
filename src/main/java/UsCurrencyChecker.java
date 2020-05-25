@@ -1,9 +1,16 @@
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class UsCurrencyChecker {
-    public static Matcher getMatcher(String usCurrencyString) {
-        throw new NotImplementedException();
+    public static Matcher getMatcher(String usCurrencyString)
+    {
+        String regex = "\\$\\s*\\d+(.\\d+)?";
+
+        Pattern pattern = Pattern.compile(regex);
+
+        Matcher matcher = pattern.matcher(usCurrencyString);
+        return matcher;
     }
 }
